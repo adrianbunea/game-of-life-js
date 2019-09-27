@@ -8,6 +8,9 @@ describe('God', function() {
       assert.ok(god);
     });
 
-
+    it('should contain currentGeneration', function () {
+      let god = new God();
+      assert.ok(god.currentGeneration);
+    })
   });
 });
