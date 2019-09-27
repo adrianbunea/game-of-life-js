@@ -1,0 +1,13 @@
+{
+    "name": "Game of Life",
+    "dockerFile": "Dockerfile",
+    "appPort": [3000],
+    "runArgs": [ "-u", "node" ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postCreateCommand": "yarn install",
+    "extensions": [
+        "dbaeumer.vscode-eslint"
+    ]
+}
