@@ -1,6 +1,7 @@
 class God {
   constructor () {
     this.currentGeneration = [];
+    this.nextGeneration = [];
   }
 }
 

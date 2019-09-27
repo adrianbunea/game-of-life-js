@@ -11,6 +11,11 @@ describe('God', function() {
     it('should contain currentGeneration', function () {
       let god = new God();
       assert.ok(god.currentGeneration);
+    });
+
+    it('should contain nextGeneration', function () {
+      let god = new God();
+      assert.ok(god.nextGeneration);
     })
   });
 });
