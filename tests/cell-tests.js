@@ -7,5 +7,10 @@ describe('Cell', function() {
       let cell = new Cell();
       assert.ok(cell);
     });
+
+    it('should be dead by default', function () {
+      let cell = new Cell();
+      assert.equal(cell.alive, false)
+    });
   });
 });
