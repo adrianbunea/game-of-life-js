@@ -1,6 +1,7 @@
 var assert = require('assert');
 var Grid = require('../classes/grid.js');
-var Cell = require('../classes/cell');
+var Cell = require('../classes/cell.js');
+
 describe('Grid', function() {
   describe('#constructor()', function() {
     it('should exist', function() {
@@ -31,6 +32,7 @@ describe('Grid', function() {
     it('should contain a matrix of dead cells', function () {
       let grid = new Grid();
       let expectedCells = Array(10).fill(Array(10).fill(new Cell()));
-    })
+      assert.equal(JSON.stringify(grid.cells), JSON.stringify(expectedCells));
+    });
   });
 });
