@@ -1,11 +1,11 @@
 var assert = require('assert');
-var Grid = require('../classes/grid.js');
+var God = require('../classes/god.js');
 
-describe('Grid', function() {
+describe('God', function() {
   describe('#constructor()', function() {
     it('should exist', function() {
-      let grid = new Grid();
-      assert.ok(grid);
+      let god = new God();
+      assert.ok(god);
     });
 
 
