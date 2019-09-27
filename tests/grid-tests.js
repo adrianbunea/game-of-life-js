@@ -11,6 +11,11 @@ describe('Grid', function() {
     it('should have 10 columns by default', function () {
       let grid = new Grid();
       assert.equal(grid.columns, 10);
+    });
+
+    it('should have 10 rows by default', function () {
+      let grid = new Grid();
+      assert.equal(grid.rows, 10);
     })
   });
 });
