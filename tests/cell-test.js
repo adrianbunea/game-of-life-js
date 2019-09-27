@@ -8,4 +8,12 @@ describe('Cell', function() {
       assert.equal(cell.state, false);
     });
   });
+
+  describe('#kill()', function() {
+    it ('should be dead after getting killed', function() {
+      let cell = new Cell();
+      cell.kill();
+      assert.equal(cell.state, false);
+    });
+  });
 });
