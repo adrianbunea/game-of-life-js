@@ -8,6 +8,9 @@ describe('Grid', function() {
       assert.ok(grid);
     });
 
-
+    it('should have 10 columns by default', function () {
+      let grid = new Grid();
+      assert.equal(grid.columns, 10);
+    })
   });
 });

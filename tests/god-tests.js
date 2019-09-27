@@ -16,6 +16,6 @@ describe('God', function() {
     it('should contain nextGeneration', function () {
       let god = new God();
       assert.ok(god.nextGeneration);
-    })
+    });
   });
 });
