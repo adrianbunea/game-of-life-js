@@ -1,28 +1,6 @@
 let assert = require('assert');
 
 describe('Game of Life', function () {
-  describe('World', function () {
-    class World {
-      constructor () {
-        this.cells = [];
-      }
-    }
-
-    class Cell {
-      constructor (x, y) {
-        this.x = x;
-        this.y = y;
-      }
-    }
-
-    describe('#constructor()', function () {
-      it('has a list of cells', function () {
-        let world = new World();
-        assert.deepEqual(world.cells, []);
-      });
-    })
-  });
-
   describe('#willRevive()', function () {
     function willRevive(numberOfNeighbours) {
       return numberOfNeighbours === 3;
