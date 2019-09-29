@@ -102,6 +102,12 @@ describe('Cell', function () {
       it('is true when there are 3 live neighbors', function () {
         assert.equal(willLive(3, cell), true);
       });
+
+      [0, 1, 2, 4, 5, 6, 7, 8].forEach((neighbourCount) => {
+        it(`is false when there are ${neighbourCount} live neighbours`, function () {
+          assert.equal(willLive(neighbourCount, cell), false);
+        });
+      });
     });
   });
 });
