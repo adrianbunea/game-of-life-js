@@ -14,7 +14,7 @@ describe('Neighbours', function () {
       }
 
       spawnCell () {
-        return new Cell({ x:0, y:0 });
+        return new Cell();
       }
 
       nextGeneration () {
@@ -40,7 +40,7 @@ describe('Neighbours', function () {
     describe('#nextGeneration()', function () {
       it('spawns a new Cell if there are exactly 3 neighbours', function () {
         let neighbours = new Neighbours();
-        let cells = new Array(3).fill(new Cell({ x:0, y:0 }));
+        let cells = new Array(3).fill(new Cell());
         neighbours.cells.push(...cells);
 
         assert.ok(neighbours.nextGeneration());
@@ -49,7 +49,7 @@ describe('Neighbours', function () {
       [0, 1, 2, 4, 5, 6, 7, 8].forEach((neighbourCount) => {
         it(`does not spawn a Cell if there are ${neighbourCount} neighbours`, function () {
           let neighbours = new Neighbours();
-          let cells = new Array(neighbourCount).fill(new Cell({ x:0, y:0 }));
+          let cells = new Array(neighbourCount).fill(new Cell());
           neighbours.cells.push(...cells);
 
           assert.equal(neighbours.nextGeneration(), null);
@@ -60,10 +60,10 @@ describe('Neighbours', function () {
     describe('"#count()', function () {
       it("finds 3 neighbours around the center", function () {
         let cells = new Map();
-        cells.set(JSON.stringify({ x:-1, y: 1 }), new Cell({ x:-1, y: 1 }));
-        cells.set(JSON.stringify({ x: 1, y:-1 }), new Cell({ x: 1, y:-1 }));
-        cells.set(JSON.stringify({ x: 1, y: 1 }), new Cell({ x: 1, y: 1 }));
-        cells.set(JSON.stringify({ x:-1, y:-1 }), new Cell({ x:-1, y:-1 }));
+        cells.set(JSON.stringify({ x:-1, y: 1 }), new Cell());
+        cells.set(JSON.stringify({ x: 1, y:-1 }), new Cell());
+        cells.set(JSON.stringify({ x: 1, y: 1 }), new Cell());
+        cells.set(JSON.stringify({ x:-1, y:-1 }), new Cell());
 
         let world = new World();
         world.cells = cells;
