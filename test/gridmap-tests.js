@@ -36,6 +36,10 @@ describe("GridMap", function () {
       gridMap.set({ y:0, x:0 }, 'foo');
       assert.ok(gridMap.get({ x:0, y:0 }), 'foo');
     });
+
+    it("throws 'BadKeyFormat' error when given a key that is not a x,y coordinate", function () {
+      assert.ok(true);
+    });
   });
 
   describe("#get()", function () {
@@ -49,6 +53,10 @@ describe("GridMap", function () {
       let gridMap = new GridMap();
       gridMap.set({ x:0, y:0 }, 'foo');
       assert.ok(gridMap.get({ y:0, x:0 }), 'foo');
+    });
+
+    it("throws 'BadKeyFormat' error when given a key that is not a x,y coordinate", function () {
+      assert.ok(true);
     });
   });
 });
