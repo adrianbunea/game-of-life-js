@@ -1,9 +1,29 @@
 let assert = require('assert');
 
 describe("GridMap", function () {
+  class BadFormatError extends Error {
+    constructor (message) {
+      super(message);
+      this.message = message;
+      this.name = "Key formatting error";
+    }
+  }
+
   class GridMap {
     constructor () {
       var hash = function (key) {
+        if (Object.keys(key).length !== 2) {
+          throw new BadFormatError("Key should have only 2 fields!");
+        }
+
+        if (key.x === 'undefined') {
+          throw new BadFormatError("x field is missing!");
+        }
+
+        if (key.y === 'undefined') {
+          throw new BadFormatError("y field is missing!");
+        }
+
         let normalizedKey = { x:key.x, y:key.y };
         return JSON.stringify(normalizedKey);
       };
@@ -37,8 +57,13 @@ describe("GridMap", function () {
       assert.ok(gridMap.get({ x:0, y:0 }), 'foo');
     });
 
-    it("throws 'BadKeyFormat' error when given a key that is not a x,y coordinate", function () {
-      assert.ok(true);
+    it("throws 'BadFormatError' when given a key that is not a x,y coordinate", function () {
+      let gridMap = new GridMap();
+      let block = () => { 
+        gridMap.set({ y:0, x:0, z:0 });
+      };
+
+      assert.throws(block, new BadFormatError("Key should have only 2 fields!"));
     });
   });
 
@@ -55,8 +80,13 @@ describe("GridMap", function () {
       assert.ok(gridMap.get({ y:0, x:0 }), 'foo');
     });
 
-    it("throws 'BadKeyFormat' error when given a key that is not a x,y coordinate", function () {
-      assert.ok(true);
+    it("throws 'BadFormatError' when given a key that is not a x,y coordinate", function () {
+      let gridMap = new GridMap();
+      let block = () => { 
+        gridMap.get({ y:0, x:0, z:0 });
+      };
+
+      assert.throws(block, new BadFormatError("Key should have only 2 fields!"));
     });
   });
 });
