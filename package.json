@@ -10,7 +10,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "express": "^4.16.1",
+    "express": "^4.17.3",
     "mocha": "^6.2.0"
   }
 }
