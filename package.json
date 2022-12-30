@@ -11,6 +11,6 @@
   },
   "dependencies": {
     "express": "^4.16.1",
-    "mocha": "^6.2.0"
+    "mocha": "^10.2.0"
   }
 }
